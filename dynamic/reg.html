@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slide Navbar</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/reg.css '%}">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
+				<form method="post">
+					{% csrf_token %}
+					<label for="chk" aria-hidden="true">Sign up</label>
+					<input type="text" name="fn" placeholder="User name" required="">
+					<input type="email" name="em" placeholder="Email" required="">
+					<input type="number" name="mb" placeholder="MObile">
+          			<input type="number" name="ps" placeholder="password" required="">
+					<input type="password" name="cps" placeholder="confirmPassword" required="">
+					<button type="submit">Sign up</button>
+				</form>
+			</div>
+
+			

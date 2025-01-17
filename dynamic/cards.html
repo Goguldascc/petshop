@@ -1,0 +1,19 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/cards.css' %}">
+{% if  messages %}
+{% for msg in messages %}
+<h1 style="color: greenyellow;">{{msg}}</h1>
+{% endfor %}
+{% endif %}
+{% for i in prodact %}
+<main class="page-content">
+    <div class="card"style="background-image: url({{i.pim.url}});" >
+      <div class="content">
+        <h2 class="title">{{i.pnm}}</h2>
+        <h2 class="title">{{i.prc}}</h2>
+       
+        <p class="copy">{{i.des}}</p>
+        <button class="btn" ><a href="{% url 'addcart' i.id %}">ADD TO CART</a></button>
+      </div>
+  </main>
+  {% endfor %}

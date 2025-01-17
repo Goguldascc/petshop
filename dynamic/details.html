@@ -1,0 +1,39 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/details.css' %}">
+<body>
+    <section>
+      <h1>Table Details</h1>
+      <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0">
+          <thead>
+            <tr>
+              <th>User Name</th>
+              <th>E-mail</th>
+              <th>MObile number</th>
+              <th>password</th>
+              <th>Action</th>
+              <th>E-Mail Action</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <div class="tbl-content">
+        <table cellpadding="0" cellspacing="0">
+          <tbody>
+            {% for i in data %}
+            <tr>
+              <td>{{i.fn}}</td>
+              <td>{{i.em}}</td>
+              <td>{{i.mb}}</td>
+              <td>{{i.ps}}</td>
+              <td><a href="/edit?idn={{i.id}}">Edit</a></td>
+              
+              <td><a href="/e2?em={{i.id}}">Sendmail</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    </body>

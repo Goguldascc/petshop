@@ -1,0 +1,15 @@
+{% load crispy_forms_tags %}
+<h1 style="color: red;">{{success}}</h1>
+<form method="post">
+    {% csrf_token %}
+{{form|crispy}}
+<br>
+<button type="submit">Register</button>
+</form>
+<style>
+    button{
+        background-color: red;
+        color: aliceblue;
+        border-color: red;
+    }
+</style>

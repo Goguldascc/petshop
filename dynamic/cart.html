@@ -1,0 +1,25 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/cards.css' %}">
+
+<h1 style="color: greenyellow;">{{msg}}</h1>
+
+{% for i in cart %}
+<main class="page-content">
+    <div class="card"style="background-image: url({{i.product.pim.url}});" >
+      <div class="content">
+        
+        <h2 class="title">{{i.product.pnm}}</h2>
+        <h2 class="title">{{i.product.prc}}</h2>
+        <h2 class="title">total quandity : {{i.qty}}</h2>
+        <p class="copy">{{i.product.des}}</p>
+        <button><a href="{% url 'cartdelete' i.id %}">remove</a></button>
+        
+
+        
+      </div>
+  </main>
+  {% endfor %}
+  <div>
+    total price :  <input type="text" value="{{total}}INR (₹)" >
+  </div>
+  

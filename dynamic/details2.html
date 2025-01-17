@@ -1,0 +1,41 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/details.css' %}">
+<body>
+    <section>
+      <h1>Table Details</h1>
+      <div class="tbl-header">
+      <form method="post" action="update">
+        <table cellpadding="0" cellspacing="0">
+          {% csrf_token %}
+          <thead>
+            <tr>
+              <th>User Name</th>
+              <th>E-mail</th>
+              <th>MObile number</th>
+              <th>password</th>
+              <th>Action</th>
+              
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <div class="tbl-content">
+        <table cellpadding="0" cellspacing="0">
+          <tbody>
+            {% for i in data %}
+            <tr>
+              <td><input type="text" value="{{i.fn}}" name="un">
+              <input type="text" value="{{i.id}}" name="idl" hidden></td>
+              <td><input type="text" value="{{i.em}}" name="eml"></td>
+              <td><input type="text" value="{{i.mb}}" name="mob"></td>
+              <td><input type="text" value="{{i.ps}}" name="psw"></td>
+              <td><button type="submit">Update</button></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </form>
+      </div>
+    </section>
+    
+    </body>

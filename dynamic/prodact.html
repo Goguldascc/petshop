@@ -1,0 +1,26 @@
+{% load static %}
+<div class="container">  
+    <link rel="stylesheet" href="{% static 'css/prodact.css' %}">
+    <form id="contact" action="" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <h1 style="color: greenyellow;">{{success}}</h1>
+
+      <h3>Quick Contact</h3>
+      <h4>Contact us today, and get reply with in 24 hours!</h4>
+      <fieldset>
+        <input placeholder="Prodact Name" type="text" name="fn" class="input">
+      </fieldset>
+      <fieldset>
+        <input placeholder="Image" type="file" name="pi" class="input">
+      </fieldset>
+      <fieldset>
+        <input placeholder="price" type="text" name="pr" class="input" >
+      </fieldset>
+      <fieldset>
+        <textarea name="ds" placeholder="Discription" class="input"></textarea>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">register</button>
+      </fieldset>
+    </form>
+   
+    
+  </div>
